@@ -6,5 +6,9 @@ my_event:RegisterEvent("PLAYER_LEVEL_UP")
 my_event:SetScript("OnEvent",
 	function( self, event, ... )
 		local arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9 = ...
-		print('Aferin lan level' .. arg1 .. 'oldun!' .. UnitName("Player"))
+		print('Aferin lan level ' .. arg1 .. ' oldun!' .. UnitName("Player"))
 	end)
+
+local self = CreateFrame("Frame", "FunWidget", UIParent);
+
+local posX, posY = GetPlayerMapPosition("player");
