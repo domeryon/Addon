@@ -9,14 +9,17 @@ my_event:SetScript("OnEvent",
 		print('Aferin lan level ' .. arg1 .. ' oldun!' .. UnitName("Player"))
 	end)
 
-CreateFrame("Frame", "TestFrame1", UIParent)
-TestFrame1:SetWidth(100)
-TestFrame1:SetHeight(100)
-TestFrame1:SetPoint("BOTTOMLEFT", 0,0)
-CreateFrame("Frame", "TestFrame2", 0,0)
-TestFrame2:SetWidth(100)
-TestFrame2:SetHeight(100)
-TestFrame2:SetPoint("CENTER", TestFrame1, "TOPRIGHT", 0,0)
+local f = CreateFrame("Frame",nil,UIParent)
+f:SetFrameStrata("BACKGROUND")
+f:SetWidth(128) -- Set these to whatever height/width is needed 
+f:SetHeight(64) -- for your Texture
 
+local t = f:CreateTexture(nil,"BACKGROUND")
+t:SetTexture("Interface\\Glues\\CharacterCreate\\UI-CharacterCreate-Factions.blp")
+t:SetAllPoints(f)
+f.texture = t
+
+f:SetPoint("CENTER",0,0)
+f:Show()
 
 local posX, posY = GetPlayerMapPosition("player");
