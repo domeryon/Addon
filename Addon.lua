@@ -9,6 +9,14 @@ my_event:SetScript("OnEvent",
 		print('Aferin lan level ' .. arg1 .. ' oldun!' .. UnitName("Player"))
 	end)
 
-local self = CreateFrame("Frame", "FunWidget", UIParent);
+CreateFrame("Frame", "TestFrame1", UIParent)
+TestFrame1:SetWidth(100)
+TestFrame1:SetHeight(100)
+TestFrame1:SetPoint("BOTTOMLEFT", 0,0)
+CreateFrame("Frame", "TestFrame2", 0,0)
+TestFrame2:SetWidth(100)
+TestFrame2:SetHeight(100)
+TestFrame2:SetPoint("CENTER", TestFrame1, "TOPRIGHT", 0,0)
+
 
 local posX, posY = GetPlayerMapPosition("player");
